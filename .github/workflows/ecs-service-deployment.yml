@@ -44,4 +44,3 @@ jobs:
           task-definition: ${{ steps.update.outputs.task-definition }}
           service: ${{ github.event.inputs.generator_name }}
           cluster: ecs-deployments-poc
-          wait-for-service-stability: true
