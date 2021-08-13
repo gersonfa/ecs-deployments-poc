@@ -1,5 +1,5 @@
 resource "aws_ecs_service" "this" {
-  name            = "staging"
+  name            = "generator"
   cluster         = aws_ecs_cluster.this.id
   task_definition = aws_ecs_task_definition.service.arn
   desired_count   = 1
