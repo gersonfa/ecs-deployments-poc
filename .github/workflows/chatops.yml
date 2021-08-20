@@ -1,0 +1,23 @@
+  
+name: Slash Command Dispatch
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  slashCommandDispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slash Command Dispatch
+        uses: peter-evan/slash-command-dispatch@2.1.1
+        with:
+          token: ${{ secrets.TOKEN }}
+          config: >
+            [
+              {
+                "command": "hello-test",
+                "static_args": [
+                  "event=${{ github.event }}"
+                ],
+                "dispatch_type": "workflow"
+              }
+            ]
