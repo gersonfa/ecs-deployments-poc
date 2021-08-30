@@ -15,6 +15,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Download task definition
+      - name: Deploy
         run: aws ecs update-service --cluster ecs-deployments-poc --service generator --force-new-deployment
+        
+      - name: Last step
+        run: echo deployment succesfull 
         
